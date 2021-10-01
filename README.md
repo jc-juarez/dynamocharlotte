@@ -13,14 +13,16 @@ How to Use Dynamo Charlotte
 
 Download the 'dynamocharlotte' folder and paste it inside the directory where you will be working on. Now create a Python File and import Dynamo Charlotte as follows:
 
-```
-import dynamocharlotte as dc
 ```python
+import dynamocharlotte as dc
+```
 
 Now call the 'run' function on 'dc' in order to execute Dynamo Charlotte. To do this simply pass the code as a parameter using Python Multi-line String Triple Quotes as follows:
 
-```
-dc.run
+```python
+dc.run('''
+
+''')
 ```
 
 
