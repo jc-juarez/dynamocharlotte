@@ -112,7 +112,7 @@ There are two types of Traditional Variables: **number** and **string**. The typ
 99
 ```
 
-The type **string** holds text values, cannot operate with arithmetical operators, and are declared and expressed by using double quotes in order to tell them apart from the type **number**:
+The type **string** holds text values, cannot operate with arithmetical operators, and is declared and expressed by using double quotes in order to tell it apart from the type **number**:
 
 ```
 "Hello World!"
