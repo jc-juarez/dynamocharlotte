@@ -25,6 +25,18 @@ dc.run('''
 ''')
 ```
 
+Now you are ready to go. Here's a 'Hello World!' Program Example:
+
+```python
+dc.run('''
+
+print("Hello World!)
+
+''')
+```
+
+
+
 
 
 
