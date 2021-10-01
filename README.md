@@ -1,6 +1,6 @@
 # Dynamo Charlotte
 
-Copyright (C) 2020-2021
+Copyright (C) 2020-2021.
 Sonata Infinity Technologies.
 Author: Juan Carlos Juárez.
 Licensed under MPL 2.0.
