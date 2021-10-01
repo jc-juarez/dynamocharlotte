@@ -52,6 +52,16 @@ For more Example Programs please check https://github.com/JC-Juarez/dynamocharlo
 Dynamo Charlotte Documentation
 ==========
 
+*Things to consider:
+
+* While no Indentation is required for Dynamo Charlotte, it is strongly recommended for a better visualization.
+* Operators priority is the same as in most Traditional Programming Languages (Visual Basic, C++, Python, Java, etc.)
+* Object Variables are heterogeneous
+* Variables cannot start with numbers and cannot be the same as reserved tokens.
+* The 'camelCase' variable declaration model is the official model for Dynamo Charlotte.
+
+## Features
+
 
 
 
