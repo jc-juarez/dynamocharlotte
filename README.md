@@ -19,10 +19,14 @@ Download the 'dynamocharlotte' folder and paste it inside the directory where yo
 import dynamocharlotte as dc
 ```
 
-Now call the 'run' function on 'dc' in order to execute Dynamo Charlotte. To do this simply pass the code as a parameter using Python Multi-line String Triple Quotes as follows:
+Now call the 'run' function on 'dc' in order to execute Dynamo Charlotte. To do this simply pass the code as a parameter using Python Multi-line String Triple Quotes. All Dynamo Charlotte Programs include a 'main' and 'end' keyword, where 'main' defines the start of the Main program and 'end' the end of the Program. The base template looks as follows:
 
 ```python
 dc.run('''
+
+main
+
+end
 
 ''')
 ```
@@ -34,7 +38,11 @@ import dynamocharlotte as dc
 
 dc.run('''
 
+main
+
 print("Hello World!")
+
+end
 
 ''')
 ```
