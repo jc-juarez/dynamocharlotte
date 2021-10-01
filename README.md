@@ -81,7 +81,7 @@ end
 
 ## Comments
 
-Comments can be added by writing **//** followed the comment content. The can be placed at any part of the program:
+Comments can be added by writing **'//'** followed the comment content. The can be placed at any part of the program:
 
 ```python
 import dynamocharlotte as dc
@@ -105,7 +105,7 @@ end
 ''')
 ```
 
-## Traditional Variables Declaration
+## Traditional Variables Declaration and Assignment
 
 There are two types of Traditional Variables: **'number'** and **'string'**. The type **'number'** can only hold numerical values such as:
 
@@ -137,6 +137,32 @@ var myNumber as number
 var myString as string
 
 main
+
+...
+
+end
+
+''')
+```
+
+Now, to assign a value to a Traditional Variable, it is only needed to indicate the name of the variable followed by **'='** and the expression that will correspond to it. It is important to realize that due the fact that Variables in Dynamo Charlotee are explicitely typed, they can only be assigned an expression of their same type:
+
+```python
+import dynamocharlotte as dc
+
+dc.run('''
+
+var myNumber as number
+
+var myString as string
+
+main
+
+...
+
+myNumber = 3
+
+myString = "Hello Dynamo Charlotte!"
 
 ...
 
