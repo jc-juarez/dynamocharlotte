@@ -1,9 +1,11 @@
-# Dynamo Charlotte Compound
-# Version: 2.0.0
+# Dynamo Charlotte 
+# Author: Juan Carlos Juárez
+# Version: 1.0.0
 # MVP Released Version
 
-# Author: Juan Carlos Juárez
-# ID: A00824524
+# Licensed under MPL 2.0. 
+# All rights reserved.
+
 
 import dynamocharlotte.ply.lex as lex
 import dynamocharlotte.ply.yacc as yacc
