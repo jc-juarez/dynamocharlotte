@@ -49,7 +49,7 @@ end
 
 For more Example Programs please check https://github.com/JC-Juarez/dynamocharlotte/tree/main/Code%20Examples
 
-Dynamo Charlotte Documentation
+Dynamo Charlotte Documentation - Syntax, Grammar and Considerations
 ==========
 
 Things to consider:
@@ -61,9 +61,8 @@ Things to consider:
 * Variables cannot start with numbers and cannot be the same as reserved tokens.
 * The 'camelCase' variable declaration model is the official model for Dynamo Charlotte.
 
-## Syntax
+## Main Section
 
-* Main Section
 The Main section of the code starts with the word **main** and ends with the word **end**:
 
 ```python
@@ -78,7 +77,8 @@ end
 ''')
 ```
 
-* Comments
+## Comments
+
 Comments can be added by writing **//** followed the comment content. The can be placed at any part of the program:
 
 ```python
@@ -101,7 +101,8 @@ end
 ''')
 ```
 
-* Traditional Variables Declaration
+## Traditional Variables Declaration
+
 There are two types of Traditional Variables **number** and **string**. The type **number** can only hold numerical values such as:
 
 ```
