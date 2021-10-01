@@ -169,6 +169,44 @@ end
 ''')
 ```
 
+In order to access them at their exact positions, we can use their indices by using **'[index]'**. As this is not a declaration but rather an expression, this must be inside the Main Section:
+
+```python
+import dynamocharlotte as dc
+
+dc.run('''
+
+var i as number
+
+var j as number
+
+var k as number
+
+vector(3) myVector
+
+matrix(3,4) myMatrix
+
+cube(3,4,5) myCube
+
+main
+
+...
+
+i = myVector[0]
+
+j = myMatrix[0][1]
+
+k = myCube[0][1][2]
+
+...
+
+end
+
+''')
+```
+
+
+
 
 
 
