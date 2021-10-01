@@ -47,6 +47,8 @@ end
 ''')
 ```
 
+For more examples programs please check https://github.com/JC-Juarez/dynamocharlotte/tree/main/Code%20Examples
+
 Dynamo Charlotte Documentation
 ==========
 
