@@ -13,7 +13,7 @@ How to Use Dynamo Charlotte
 
 *Requirements: Python 3.6+ installed.
 
-Download the 'dynamocharlotte' folder and paste it inside the directory where you will be working on. Now create a Python File and import Dynamo Charlotte as follows:
+Download the 'dynamocharlotte' folder and add it inside the directory where you will be working on. Now create a Python File and import Dynamo Charlotte as follows:
 
 ```python
 import dynamocharlotte as dc
@@ -47,7 +47,7 @@ end
 ''')
 ```
 
-For more examples programs please check https://github.com/JC-Juarez/dynamocharlotte/tree/main/Code%20Examples
+For more Example Programs please check https://github.com/JC-Juarez/dynamocharlotte/tree/main/Code%20Examples
 
 Dynamo Charlotte Documentation
 ==========
