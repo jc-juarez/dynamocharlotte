@@ -1,0 +1,55 @@
+// Sort Vector Algorithm. May 26th 2021. Juan Carlos Juárez. A00824524. //
+// Dynamo Charlotte Compound //
+
+// Traditional Variables //
+
+var i as number
+var j as number
+var temp as number
+var size as number
+
+// Vector //
+
+vector(50) nums
+
+function getSize
+    do
+        print("*** Sort Vector Algorithm ***")
+        println("Please insert size of the vector: ")
+        input(size)
+    loopwhile(size <= 0)
+return
+
+function getVector
+    for i = 0 to (size - 1)
+        input(nums[i])
+    next
+return
+
+function sortVector
+    for i = 0 to (size - 2)
+        for j = (i + 1) to (size - 1)
+            if(nums[i] > nums[j])
+                temp = nums[i]
+                nums[i] = nums[j]
+                nums[j] = temp
+            endif
+        next
+    next
+return
+
+function displayVector
+    print(endl)
+    for i = 0 to (size - 1)
+        print(nums[i])
+    next
+return
+
+main
+
+call getSize
+call getVector
+call sortVector
+call displayVector
+
+end

@@ -1,0 +1,31 @@
+// Cube Program. May 26th 2021. Juan Carlos Juárez. A00824524. //
+// Dynamo Charlotte Compound //
+
+var i as number
+var j as number
+var k as number
+
+cube(2,3,2) myCube
+
+main
+
+print("Enter 12 values: ")
+for i = 0 to 1
+    for j = 0 to 2
+        for k = 0 to 1
+            input(myCube[i][j][k])
+        next
+    next
+next
+
+print(endl)
+
+for i = 0 to 1
+    for j = 0 to 2
+        for k = 0 to 1
+            print(myCube[i][j][k])
+        next
+    next
+next
+
+end
