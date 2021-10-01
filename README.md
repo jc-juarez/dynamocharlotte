@@ -103,7 +103,7 @@ end
 
 ## Traditional Variables Declaration
 
-There are two types of Traditional Variables **number** and **string**. The type **number** can only hold numerical values such as:
+There are two types of Traditional Variables: **number** and **string**. The type **number** can only hold numerical values such as:
 
 ```
 3
