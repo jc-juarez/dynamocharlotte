@@ -145,6 +145,32 @@ end
 ''')
 ```
 
+## Object Variables Declaration
+
+There are three types of Object Variables: **'vector'**, **'matrix'** and **'cube'**. All these three types work in a similar way to C++ Non-Dynammic Arrays, with the difference that all three are heterogeneous, which means that they can contain both Tradtional Variables of type **'number'** or **'string'** inside them. Just as Traditional Variables, Object Variables must be declared at the very top as well by first indicating their type followed by their sizes inside parentheses, each with their number of parameters corresponding to their dimensions, and finally followed by the name we want the variable to have:
+
+```python
+import dynamocharlotte as dc
+
+dc.run('''
+
+vector(3) myVector
+
+matrix(3,4) myMatrix
+
+cube(3,4,5) myCube
+
+main
+
+...
+
+end
+
+''')
+```
+
+
+
 
 
 
