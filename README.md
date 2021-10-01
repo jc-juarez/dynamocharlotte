@@ -63,9 +63,11 @@ Things to consider:
 
 ## Main Section
 
-The Main section of the code starts with the word **main** and ends with the word **end**:
+The Main section of the code starts with the word **'main'** and ends with the word **'end'**:
 
 ```python
+import dynamocharlotte as dc
+
 dc.run('''
 
 main
@@ -82,6 +84,8 @@ end
 Comments can be added by writing **//** followed the comment content. The can be placed at any part of the program:
 
 ```python
+import dynamocharlotte as dc
+
 dc.run('''
 
 // This is a comment
@@ -103,7 +107,7 @@ end
 
 ## Traditional Variables Declaration
 
-There are two types of Traditional Variables: **number** and **string**. The type **number** can only hold numerical values such as:
+There are two types of Traditional Variables: **'number'** and **'string'**. The type **'number'** can only hold numerical values such as:
 
 ```
 3
@@ -112,7 +116,7 @@ There are two types of Traditional Variables: **number** and **string**. The typ
 99
 ```
 
-The type **string** holds text values, cannot operate with arithmetical operators, and is declared and expressed by using double quotes in order to tell it apart from the type **number**:
+The type **'string'** holds text values, cannot operate with arithmetical operators, and is declared and expressed by using double quotes in order to tell it apart from the type **'number'**:
 
 ```
 "Hello World!"
@@ -121,9 +125,11 @@ The type **string** holds text values, cannot operate with arithmetical operator
 "The square root of 8 is 2.82..."
 ```
 
-It is important to know that all variables must be declared at the top beginning of the program, before anything else (excluding comments, which can be at any part of the code). They are declared by using the word **var** followed by the name we want the variable to have, and then we use the word **as** followed by the Variable type, which can be either a **number** or **string**:
+It is important to know that all variables must be declared at the top beginning of the program, before anything else (excluding comments, which can be at any part of the code). They are declared by using the word **'var'** followed by the name we want the variable to have, and then we use the word **'as'** followed by the Variable type, which can be either a **'number'** or **'string'**:
 
 ```python
+import dynamocharlotte as dc
+
 dc.run('''
 
 var myNumber as number
