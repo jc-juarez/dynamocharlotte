@@ -2,19 +2,15 @@ import dynamocharlotte as dc
 
 dc.run('''
 
-// Sorting Vector Algorith (Selection Sort) - Example Program 
+// Sorting Vector Algorithm (Selection Sort) - Example Program 
 // Author: Juan Carlos Juárez https://github.com/JC-Juarez
 // Date: May 2021
 // Dynamo Charlotte
-
-// Traditional Variables //
 
 var i as number
 var j as number
 var temp as number
 var size as number
-
-// Vector //
 
 vector(50) nums
 

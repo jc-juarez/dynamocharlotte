@@ -2888,7 +2888,7 @@ def run(data):
     if(data != ""):
         parser.parse(data)
     if(len(quadruplesAll) <= 2): 
-        print("<?> Feeling lost? Find Dynamo Charlotte Code Examples at https://juancarlosjuarez.epizy.com/dynamocharlotte")
+        print("<?> Feeling lost? Find Dynamo Charlotte Code Examples at https://github.com/JC-Juarez/dynamocharlotte/tree/main/Code%20Examples")
     print("")
 
 
