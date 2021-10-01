@@ -31,7 +31,7 @@ end
 ''')
 ```
 
-Now you are ready to go. Here's a 'Hello World!' Program Example:
+Now you are ready to go. Here's a 'Hello World!' Program Example. Just run it in your favorite IDE:
 
 ```python
 import dynamocharlotte as dc
