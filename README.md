@@ -6,7 +6,7 @@ Author: Juan Carlos Juárez.
 Licensed under MPL 2.0.
 All rights reserved.
 
-Dynamo Charlotte is a Python-based Interpreter that runs on Python Lex-Yacc Parser. It is a beginner friendly language with a syntax similar to Visual Basic and Python, allowing to create anything from numbers to multi-dimensional arrays.
+Dynamo Charlotte is a Python-based Interpreter that runs on Python Lex-Yacc Parser. It is a beginner friendly language with a syntax similar to Visual Basic and Python, allowing to create anything from numbers to multi-dimensional arrays. The goal of Dynamo Charlotte is to keep a simple coding syntax while still referring to fundamental aspects of programming such as Non-Dynammic Memory, Explicit Typing and much more. An ideal First-Time Language to teach to kids and Programming Newbies interested in learning and diving into the amazing world of Software Engineering.
 
 How to Use Dynamo Charlotte
 ==========
