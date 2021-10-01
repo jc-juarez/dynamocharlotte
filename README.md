@@ -171,7 +171,7 @@ end
 ''')
 ```
 
-## Object Variables Declaration and Access
+## Object Variables Declaration, Assignment and Access
 
 There are three types of Object Variables: **'vector'**, **'matrix'** and **'cube'**. All these three types work in a similar way to C++ Non-Dynammic Arrays, with the difference that all three are heterogeneous, which means that they can contain both Tradtional Variables of type **'number'** or **'string'** inside them. Just as Traditional Variables, Object Variables must be declared at the very top as well by first indicating their type followed by their sizes inside parentheses, each with their number of parameters corresponding to their dimensions, and finally followed by the name we want the variable to have:
 
@@ -195,7 +195,7 @@ end
 ''')
 ```
 
-In order to access them at their exact positions, we can use their indices by using **'[index]'**. As this is not a declaration but rather an expression, this must be inside the Main Section:
+In order to access them at their exact positions, we can use their indices by using **'[index]'**. As this is not a declaration but rather an expression, this must be inside the Main Section. Their assignment follows the same model; we use their indices and assign an expression in the same way as Traditional Variables:
 
 ```python
 import dynamocharlotte as dc
@@ -217,6 +217,12 @@ cube(3,4,5) myCube
 main
 
 ...
+
+myVector[0] = 1
+
+myMatrix[0][1] = 2
+
+myCube[0][1][2] = 3
 
 i = myVector[0]
 
