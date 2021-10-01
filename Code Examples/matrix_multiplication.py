@@ -14,9 +14,9 @@ var sizeCol2 as number
 var i as number
 var j as number
 var k as number
-mat(50,50) myMat1
-mat(50,50) myMat2
-mat(50,50) myMat3
+matrix(50,50) myMat1
+matrix(50,50) myMat2
+matrix(50,50) myMat3
 
 function getSizes
     do
