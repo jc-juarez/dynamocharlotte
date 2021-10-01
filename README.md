@@ -52,15 +52,91 @@ For more Example Programs please check https://github.com/JC-Juarez/dynamocharlo
 Dynamo Charlotte Documentation
 ==========
 
-*Things to consider:
+Things to consider:
 
 * While no Indentation is required for Dynamo Charlotte, it is strongly recommended for a better visualization.
 * Operators priority is the same as in most Traditional Programming Languages (Visual Basic, C++, Python, Java, etc.)
-* Object Variables are heterogeneous
+* There are two types of Variables: Traditional (Number and String) and Object (Vector, Matrix and Cube).
+* Object Variables are heterogeneous.
 * Variables cannot start with numbers and cannot be the same as reserved tokens.
 * The 'camelCase' variable declaration model is the official model for Dynamo Charlotte.
 
-## Features
+## Syntax
+
+* Main Section
+The Main section of the code starts with the word **main** and ends with the word **end**:
+
+```python
+dc.run('''
+
+main
+
+...
+
+end
+
+''')
+```
+
+* Comments
+Comments can be added by writing **//** followed the comment content. The can be placed at any part of the program:
+
+```python
+dc.run('''
+
+// This is a comment
+
+main
+
+// Another comment
+
+...
+
+// One more comment
+
+end
+
+// The last comment
+
+''')
+```
+
+* Traditional Variables Declaration
+There are two types of Traditional Variables **number** and **string**. The type **number** can only hold numerical values such as:
+
+```
+3
+3.2
+0.15
+99
+```
+
+The type **string** holds text values, cannot operate with arithmetical operators, and are declared and expressed by using double quotes in order to tell them apart from the type **number**:
+
+```
+"Hello World!"
+"Red Car"
+"3"
+"The square root of 8 is 2.82..."
+```
+
+It is important to know that all variables must be declared at the top beginning of the program, before anything else (excluding comments, which can be at any part of the code). They are declared by using the word **var** followed by the name we want the variable to have, and then we use the word **as** followed by the Variable type, which can be either a **number** or **string**:
+
+```python
+dc.run('''
+
+var myNumber as number
+
+var myString as string
+
+main
+
+...
+
+end
+
+''')
+```
 
 
 
