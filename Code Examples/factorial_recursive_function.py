@@ -1,5 +1,11 @@
-// Factorial Recursive Function. May 26th 2021. Juan Carlos Juárez. A00824524. //
-// Dynamo Charlotte Compound //
+import dynamocharlotte as dc
+
+dc.run('''
+
+// Factorial Recursive Function - Example Program 
+// Author: Juan Carlos Juárez https://github.com/JC-Juarez
+// Date: May 2021
+// Dynamo Charlotte 
 
 var fact as number
 var x as number
@@ -26,3 +32,5 @@ call getFactorial
 print("The Factorial of " + y + " is " + fact)
 
 end
+
+''')

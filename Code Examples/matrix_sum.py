@@ -1,5 +1,11 @@
-// Matrix Sum. May 25th 2021. Juan Carlos Juárez. A00824524. //
-// Dynamo Charlotte Compound //
+import dynamocharlotte as dc
+
+dc.run('''
+
+// Matrix Sum - Example Program 
+// Author: Juan Carlos Juárez https://github.com/JC-Juarez
+// Date: May 2021
+// Dynamo Charlotte
 
 var sizeRen1 as number
 var sizeCol1 as number
@@ -68,3 +74,5 @@ call sumMat
 call displayMat
 
 end
+
+''')

@@ -1,1 +1,1 @@
-from .dcc import run
+from .dc import run

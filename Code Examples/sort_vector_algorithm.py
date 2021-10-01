@@ -1,5 +1,11 @@
-// Sort Vector Algorithm. May 26th 2021. Juan Carlos Juárez. A00824524. //
-// Dynamo Charlotte Compound //
+import dynamocharlotte as dc
+
+dc.run('''
+
+// Sorting Vector Algorith (Selection Sort) - Example Program 
+// Author: Juan Carlos Juárez https://github.com/JC-Juarez
+// Date: May 2021
+// Dynamo Charlotte
 
 // Traditional Variables //
 
@@ -53,3 +59,5 @@ call sortVector
 call displayVector
 
 end
+
+''')

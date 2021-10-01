@@ -1,5 +1,11 @@
-// Cube Program. May 26th 2021. Juan Carlos Juárez. A00824524. //
-// Dynamo Charlotte Compound //
+import dynamocharlotte as dc 
+
+dc.run('''
+
+// Cube Program - Example Program 
+// Author: Juan Carlos Juárez https://github.com/JC-Juarez
+// Date: May 2021
+// Dynamo Charlotte 
 
 var i as number
 var j as number
@@ -29,3 +35,5 @@ for i = 0 to 1
 next
 
 end
+
+''')
