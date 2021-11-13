@@ -19,14 +19,14 @@ Download the 'dynamocharlotte' folder and add it inside the directory where you 
 import dynamocharlotte as dc
 ```
 
-Now call the 'run' function on 'dc' in order to execute Dynamo Charlotte. To do this simply pass the code as a parameter using Python Multi-line String Triple Quotes. All Dynamo Charlotte Programs include a 'main' and 'end' keyword, where 'main' defines the start of the Main program and 'end' the end of the Program. The base template looks as follows:
+Now call the 'run' function on 'dc' in order to execute Dynamo Charlotte. To do this simply pass the code as a parameter using Python Multi-line String Triple Quotes. All Dynamo Charlotte Programs include a 'Main<>' and 'End<>' keyword, where 'Main<>' defines the start of the Main program and 'End<>' the end of the Program. The base template looks as follows:
 
 ```python
 dc.run('''
 
-main
+Main<>
 
-end
+End<>
 
 ''')
 ```
@@ -38,11 +38,11 @@ import dynamocharlotte as dc
 
 dc.run('''
 
-main
+Main<>
 
 print("Hello World!")
 
-end
+End<>
 
 ''')
 ```
@@ -63,18 +63,18 @@ Things to consider:
 
 ## Main Section
 
-The Main section of the code starts with the word **'main'** and ends with the word **'end'**:
+The Main section of the code starts with the word **'Main<>'** and ends with the word **'End<>'**:
 
 ```python
 import dynamocharlotte as dc
 
 dc.run('''
 
-main
+Main<>
 
 ...
 
-end
+End<>
 
 ''')
 ```
@@ -90,7 +90,7 @@ dc.run('''
 
 // This is a comment
 
-main
+Main<>
 
 // Another comment
 
@@ -98,7 +98,7 @@ main
 
 // One more comment
 
-end
+End<>
 
 // The last comment
 
@@ -136,11 +136,11 @@ var myNumber as number
 
 var myString as string
 
-main
+Main<>
 
 ...
 
-end
+End<>
 
 ''')
 ```
@@ -156,7 +156,7 @@ var myNumber as number
 
 var myString as string
 
-main
+Main<>
 
 ...
 
@@ -166,7 +166,7 @@ myString = "Hello Dynamo Charlotte!"
 
 ...
 
-end
+End<>
 
 ''')
 ```
@@ -186,11 +186,11 @@ matrix(3,4) myMatrix
 
 cube(3,4,5) myCube
 
-main
+Main<>
 
 ...
 
-end
+End<>
 
 ''')
 ```
@@ -214,7 +214,7 @@ matrix(3,4) myMatrix
 
 cube(3,4,5) myCube
 
-main
+Main<>
 
 ...
 
@@ -232,7 +232,7 @@ k = myCube[0][1][2]
 
 ...
 
-end
+End<>
 
 ''')
 ```
