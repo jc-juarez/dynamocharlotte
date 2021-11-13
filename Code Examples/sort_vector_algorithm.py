@@ -47,13 +47,13 @@ function displayVector
     next
 return
 
-main
+Main<>
 
 call getSize
 call getVector
 call sortVector
 call displayVector
 
-end
+End<>
 
 ''')

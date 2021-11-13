@@ -13,7 +13,7 @@ var k as number
 
 cube(2,3,2) myCube
 
-main
+Main<>
 
 print("Enter 12 values: ")
 for i = 0 to 1
@@ -34,6 +34,6 @@ for i = 0 to 1
     next
 next
 
-end
+End<>
 
 ''')

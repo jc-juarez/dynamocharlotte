@@ -67,7 +67,7 @@ function displayMat
     next
 return
 
-main
+Main<>
 
 print("Matrix Sum")
 print(endl)
@@ -78,6 +78,6 @@ call fillMat2
 call multiplyMat
 call displayMat
 
-end
+End<>
 
 ''')

@@ -19,7 +19,7 @@ function getFactorial
     endif
 return
 
-main
+Main<>
 
 do
     print("*** Factorial Calculator ***")
@@ -31,6 +31,6 @@ fact = 1
 call getFactorial
 print("The Factorial of " + y + " is " + fact)
 
-end
+End<>
 
 ''')
