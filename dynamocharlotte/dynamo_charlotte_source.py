@@ -184,12 +184,12 @@ def t_RETURN(t):
 	return t
 
 def t_MAIN(t):
-	r'\b(Main<>)\b'
+	r'\b(Main)\b'
 	t.type = 'MAIN'
 	return t
 
 def t_END(t):
-	r'\b(End<>)\b'
+	r'\b(End)\b'
 	t.type = 'END'
 	return t
 
