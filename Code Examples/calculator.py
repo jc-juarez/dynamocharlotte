@@ -19,7 +19,6 @@ function getNumbers
   input(num2)
 return
 
-
 Main<>
 
 print("*** Welcome to Dynamo Calculator ***")
