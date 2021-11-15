@@ -56,7 +56,7 @@ return
 
 Main<>
 
-print("Matrix Sum")
+print("*** Matrix Sum ***")
 print(endl)
 do
     println("Please enter row size of first matrix: ")

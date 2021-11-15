@@ -15,6 +15,7 @@ cube(2,3,2) myCube
 
 Main<>
 
+print("*** Cube Program ***")
 print("Enter 12 values: ")
 for i = 0 to 1
     for j = 0 to 2

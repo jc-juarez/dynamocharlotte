@@ -49,6 +49,7 @@ return
 
 Main<>
 
+print("*** Sorting Algorithm ***")
 call getSize
 call getVector
 call sortVector

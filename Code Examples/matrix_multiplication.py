@@ -69,7 +69,7 @@ return
 
 Main<>
 
-print("Matrix Sum")
+print("*** Matrix Multiplication ***")
 print(endl)
 
 call getSizes
