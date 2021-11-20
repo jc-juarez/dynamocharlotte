@@ -67,7 +67,7 @@ do
 loopwhile(option != "e")
 
 print(endl)
-print("*** Thank you for using Dyanmo Calculator ***")
+print("*** Thank you for using Dynamo Calculator ***")
 
 End<>
 
