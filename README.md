@@ -12,7 +12,7 @@ How to Use Dynamo Charlotte
 ==========
 
 *Requirements: 
-- For running on Desktop: Dynamo Charlotte IDE v2.0 [Click Here to Download](https://github.com/jc-juarez/dynamocharlotte_ide/raw/main/Dynamo%20Charlotte%20IDE%20v2.0.exe) (https://github.com/jc-juarez/dynamocharlotte_ide)
+- For running on Desktop: Dynamo Charlotte IDE v2.0 - [Click Here to Download] or visit [Dynamo Charlotte IDE Repository](https://github.com/jc-juarez/dynamocharlotte_ide/raw/main/Dynamo%20Charlotte%20IDE%20v2.0.exe) (https://github.com/jc-juarez/dynamocharlotte_ide)
 - For running on Python: Python 3.6+ installed.
 
 Download the 'dynamocharlotte' folder and add it inside the directory where you will be working on. Now create a Python File and import Dynamo Charlotte as follows:
