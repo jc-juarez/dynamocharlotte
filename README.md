@@ -19,7 +19,7 @@ How to Use Dynamo Charlotte
 
 Simply download Dynamo Charlotte IDE and you can start writing code in Dynamo Charlotte instantly!. 
 
-**- Important:** If you run Dynamo Charlotte on the IDE ommit the 'import dynamo charlotte as dc' and 'dc.run('''...''')' commands, as those are for Python. Write your code directly into the editor as if were inside the 'dc.run('''...''') function.
+**Important:** If you run Dynamo Charlotte on the IDE **ommit** the **'import dynamo charlotte as dc'** and **'dc.run('''...''')'** commands, as those are for Python. Write your code directly into the editor as if were inside the 'dc.run('''...''') function.
 
 ### Running Dynamo Charlotte on Python
 
