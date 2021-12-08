@@ -40,9 +40,9 @@ Now call the 'run' function on 'dc' in order to execute Dynamo Charlotte. To do 
 ```python
 dc.run('''
 
-Main<>
+  Main<>
 
-End<>
+  End<>
 
 ''')
 ```
@@ -54,11 +54,11 @@ import dynamocharlotte as dc
 
 dc.run('''
 
-Main<>
+  Main<>
 
-print("Hello World!")
+    print("Hello World!")
 
-End<>
+  End<>
 
 ''')
 ```
