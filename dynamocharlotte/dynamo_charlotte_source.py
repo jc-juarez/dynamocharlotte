@@ -332,7 +332,7 @@ def t_OR(t):
 def t_NUMBER(t):
     r'(\-|)\d+((\.\d+)|)'
     try:
-    	t.value = float(t.value)
+        t.value = float(t.value)
     except ValueError:
         print("\n<!> Error in Dynamo Charlotte: Float value not supported %d", t.value)
         t.value = 0
@@ -358,7 +358,7 @@ def t_newline(t):
 def t_error(t):
     global gio
     gio = True
-    print("\n<!> Error in Dynamo Charlotte: '%s' is not a defined Keyword.\n" % t.value[0])
+    print("\n<!> Compile Error in Dynamo Charlotte: '%s' is not a defined Keyword.\n" % t.value[0])
     t.lexer.skip(1)
     sys.exit()
 
@@ -488,16 +488,10 @@ def p_maindc(t):
     #res = avail.index(['T5'])
     #print(res)
     #print(availSet)
-    print("")
-    print("------------------------------------------------")
-    print("         <<< © Dynamo Charlotte >>> ")
-    print("            By Juan Carlos Juárez       ")
-    print("Learn more at https://juancarlosjuarez.epizy.com")
-    print("------------------------------------------------")
-    print("")
     #___________________________________________
     #______________EXECUTION____________________
     #___________________________________________
+    print("")
     PC = 0
     opcode = 0
     flagSameLine = 0
@@ -566,7 +560,7 @@ def p_maindc(t):
                     currVal = float(currVal)
                     varMemory[quadruple[1]][1] = currVal
                 except ValueError:
-                    print("<!> Error in Dynamo Charlotte: Input '" + str(currVal) + "' does not match with '" + str(quadruple[1]) + "' Data Type [ " + str(varMemory[quadruple[1]][0]) + " ].\n")
+                    print("\n<!> Runtime Error in Dynamo Charlotte: Input '" + str(currVal) + "' does not match with '" + str(quadruple[1]) + "' Data Type [ " + str(varMemory[quadruple[1]][0]) + " ].\n")
                     sys.exit()
             elif(varMemory[quadruple[1]][0]=="string"):
                 varMemory[quadruple[1]][1] = currVal
@@ -684,13 +678,13 @@ def p_maindc(t):
             try:
                 offset = float(offset)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Vector Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Vector Index must be an Integer Value.\n")
                 sys.exit()
             if(not(type(offset)==float and offset.is_integer())):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Vector Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Vector Index must be an Integer Value.\n")
                 sys.exit()
             if(offset >= objectStart[quadruple[2]][1] or offset < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Vector Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Vector Index is Out of Bounds.\n")
                 sys.exit()
             posVal = 0
             offset = int(offset)
@@ -715,13 +709,13 @@ def p_maindc(t):
             try:
                 offset = float(offset)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
                 sys.exit()
             if(not(type(offset)==float and offset.is_integer())):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
                 sys.exit()
             if(offset >= objectStart[quadruple[1]][1] or offset < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index is Out of Bounds.\n")
                 sys.exit()
             if(flagSameLine == 1):
                 assign = input()
@@ -754,13 +748,13 @@ def p_maindc(t):
             try:
                 offset = float(offset)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
                 sys.exit()
             if(not(type(offset)==float and offset.is_integer())):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index must be an Integer Value.\n")
                 sys.exit()
             if(offset >= objectStart[quadruple[1]][1] or offset < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[4])+offsetPos) +": Vector Index is Out of Bounds.\n")
                 sys.exit()
             offset = int(offset)
             startPos = int(startPos)
@@ -788,13 +782,13 @@ def p_maindc(t):
                 offsetRen = float(offsetRen)
                 offsetCol = float(offsetCol)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
                 sys.exit()
             if(not((type(offsetRen)==float and offsetRen.is_integer())and(type(offsetCol)==float and offsetCol.is_integer()))):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
                 sys.exit()
             if(offsetRen >= objectStart[quadruple[2]][1] or offsetRen < 0 or offsetCol >= objectStart[quadruple[2]][2] or offsetCol < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index is Out of Bounds.\n")
                 sys.exit()
             posVal = 0
             offsetRen = int(offsetRen)
@@ -826,13 +820,13 @@ def p_maindc(t):
                 offsetRen = float(offsetRen)
                 offsetCol = float(offsetCol)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Matrix Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Matrix Index must be an Integer Value.\n")
                 sys.exit()
             if(not((type(offsetRen)==float and offsetRen.is_integer())and(type(offsetCol)==float and offsetCol.is_integer()))):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Matrix Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Matrix Index must be an Integer Value.\n")
                 sys.exit()
             if(offsetRen >= objectStart[quadruple[1]][1] or offsetRen < 0 or offsetCol >= objectStart[quadruple[1]][2] or offsetCol < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Matrix Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[5])+offsetPos) +": Matrix Index is Out of Bounds.\n")
                 sys.exit()
             if(flagSameLine == 1):
                 assign = input()
@@ -871,13 +865,13 @@ def p_maindc(t):
                 offsetRen = float(offsetRen)
                 offsetCol = float(offsetCol)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
                 sys.exit()
             if(not((type(offsetRen)==float and offsetRen.is_integer())and(type(offsetCol)==float and offsetCol.is_integer()))):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index must be an Integer Value.\n")
                 sys.exit()
             if(offsetRen >= objectStart[quadruple[1]][1] or offsetRen < 0 or offsetCol >= objectStart[quadruple[1]][2] or offsetCol < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Matrix Index is Out of Bounds.\n")
                 sys.exit()
             offsetRen = int(offsetRen)
             offsetCol = int(offsetCol)
@@ -912,13 +906,13 @@ def p_maindc(t):
                 offsetY = float(offsetY)
                 offsetZ = float(offsetZ)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
                 sys.exit()
             if(not(((type(offsetX)==float and offsetX.is_integer()))and((type(offsetY)==float and offsetY.is_integer()))and((type(offsetZ)==float and offsetZ.is_integer())))):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
                 sys.exit()
             if(offsetX >= objectStart[quadruple[2]][1] or offsetX < 0 or offsetY >= objectStart[quadruple[2]][2] or offsetY < 0 or offsetZ >= objectStart[quadruple[2]][3] or offsetZ < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index is Out of Bounds.\n")
                 sys.exit()
             posVal = 0
             offsetX = int(offsetX)
@@ -959,13 +953,13 @@ def p_maindc(t):
                 offsetY = float(offsetY)
                 offsetZ = float(offsetZ)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Cube Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Cube Index must be an Integer Value.\n")
                 sys.exit()
             if(not(((type(offsetX)==float and offsetX.is_integer()))and((type(offsetY)==float and offsetY.is_integer()))and((type(offsetZ)==float and offsetZ.is_integer())))):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Cube Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Cube Index must be an Integer Value.\n")
                 sys.exit()
             if(offsetX >= objectStart[quadruple[1]][1] or offsetX < 0 or offsetY >= objectStart[quadruple[1]][2] or offsetY < 0 or offsetZ >= objectStart[quadruple[1]][3] or offsetZ < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Cube Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[6])+offsetPos) +": Cube Index is Out of Bounds.\n")
                 sys.exit()
             if(flagSameLine == 1):
                 assign = input()
@@ -1014,13 +1008,13 @@ def p_maindc(t):
                 offsetY = float(offsetY)
                 offsetZ = float(offsetZ)
             except ValueError:
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
                 sys.exit()
             if(not(((type(offsetX)==float and offsetX.is_integer()))and((type(offsetY)==float and offsetY.is_integer()))and((type(offsetZ)==float and offsetZ.is_integer())))):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index must be an Integer Value.\n")
                 sys.exit()
             if(offsetX >= objectStart[quadruple[1]][1] or offsetX < 0 or offsetY >= objectStart[quadruple[1]][2] or offsetY < 0 or offsetZ >= objectStart[quadruple[1]][3] or offsetZ < 0):
-                print("<!> Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index is Out of Bounds.\n")
+                print("\n<!> Runtime Error in Dynamo Charlotte at line " + str(int(quadruple[7])+offsetPos) +": Cube Index is Out of Bounds.\n")
                 sys.exit()
             offsetX = int(offsetX)
             offsetY = int(offsetY)
@@ -1079,7 +1073,7 @@ def p_seen_SubId(t):
     if((t[1] not in subMemory)):
         subMemory[t[1]] = cont
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Function '" + str(t[1]) + "' has already been declared.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Function '" + str(t[1]) + "' has already been declared.\n")
         sys.exit()
 
 # Subprocedures // End Procedure
@@ -1156,7 +1150,7 @@ def p_variables_dc(t):
         varMemory[t[2]] = currVar
         varPosition+=1
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(2))+offsetPos) +": Variable '" + str(t[2]) + "' has already been declared.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(2))+offsetPos) +": Variable '" + str(t[2]) + "' has already been declared.\n")
         sys.exit()
 
 # Object Variables Declaration - Vector
@@ -1171,10 +1165,10 @@ def p_objectvariables_dc_vector(t):
     try:
         vectorSize = float(vectorSize)
     except ValueError:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(5))+offsetPos) +": Vector Size must be an Integer Value.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(5))+offsetPos) +": Vector Size must be an Integer Value.\n")
         sys.exit()
     if(not(type(vectorSize)==float and vectorSize.is_integer())):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(5))+offsetPos) +": Vector Size must be an Integer Value.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(5))+offsetPos) +": Vector Size must be an Integer Value.\n")
         sys.exit()
     if((t[5] not in objectStart)):
         vectorSize = int(vectorSize)
@@ -1189,7 +1183,7 @@ def p_objectvariables_dc_vector(t):
             objectVar.append(currVal)
             objectPos+=1
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(5))+offsetPos) +": Vector '" + str(t[5]) + "' has already been declared.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(5))+offsetPos) +": Vector '" + str(t[5]) + "' has already been declared.\n")
         sys.exit()
     
 # Object Variables Declaration - Matrix
@@ -1206,10 +1200,10 @@ def p_objectvariables_dc_matrix(t):
         matSizeX = float(matSizeX)
         matSizeY = float(matSizeY)
     except ValueError:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(7))+offsetPos) +": Matrix Size must be an Integer Value.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(7))+offsetPos) +": Matrix Size must be an Integer Value.\n")
         sys.exit()
     if(not(((type(matSizeX)==float and matSizeX.is_integer()))and((type(matSizeY)==float and matSizeY.is_integer())))):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(7))+offsetPos) +": Matrix Size must be an Integer Value.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(7))+offsetPos) +": Matrix Size must be an Integer Value.\n")
         sys.exit()
     if((t[7] not in objectStart)):
         matSize = int(matSizeX) * int(matSizeY)
@@ -1229,7 +1223,7 @@ def p_objectvariables_dc_matrix(t):
             objectVar.append(currVal)
             objectPos+=1
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(7))+offsetPos) +": Matrix '" + str(t[7]) + "' has already been declared.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(7))+offsetPos) +": Matrix '" + str(t[7]) + "' has already been declared.\n")
         sys.exit()
 
 # Object Variables Declaration - Cube
@@ -1248,10 +1242,10 @@ def p_objectvariables_dc_cube(t):
         cubeSizeY = float(cubeSizeY)
         cubeSizeZ = float(cubeSizeZ)
     except ValueError:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(9))+offsetPos) +": Cube Size must be an Integer Value.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(9))+offsetPos) +": Cube Size must be an Integer Value.\n")
         sys.exit()
     if(not(((type(cubeSizeX)==float and cubeSizeX.is_integer()))and((type(cubeSizeY)==float and cubeSizeY.is_integer()))and((type(cubeSizeZ)==float and cubeSizeZ.is_integer())))):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(9))+offsetPos) +": Cube Size must be an Integer Value.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(9))+offsetPos) +": Cube Size must be an Integer Value.\n")
         sys.exit()
     if((t[9] not in objectStart)):
         cubeSize = int(cubeSizeX) * int(cubeSizeY) * int(cubeSizeZ)
@@ -1273,7 +1267,7 @@ def p_objectvariables_dc_cube(t):
             objectVar.append(currVal)
             objectPos+=1
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(9))+offsetPos) +": Cube '" + str(t[9]) + "' has already been declared.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(9))+offsetPos) +": Cube '" + str(t[9]) + "' has already been declared.\n")
         sys.exit()
 
 # Traditional Variables Assignment
@@ -1288,13 +1282,13 @@ def p_assign_dc_id(t):
     global availSet
     global offsetPos
     if(t[1] not in varMemory):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     opDet = t[3]
     lastOperand = operands.pop()
     currVal = lastOperand
     if((varMemory[t[1]][0]=="number" and not(opDet=="arithmetic")) or (varMemory[t[1]][0]=="string" and not(opDet=="string"))):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment '" + str(currVal) + "' does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment '" + str(currVal) + "' does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
         sys.exit()
     if(lastOperand in avail):
         availSet.append(lastOperand)
@@ -1331,7 +1325,7 @@ def p_assign_dc_vector(t):
         availSet.append(offsetOperand)
         avail[offsetOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("=Vec")
@@ -1373,7 +1367,7 @@ def p_assign_dc_mat(t):
         availSet.append(offsetColOperand)
         avail[offsetColOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("=Mat")
@@ -1422,7 +1416,7 @@ def p_assign_dc_cube(t):
         availSet.append(offsetZOperand)
         avail[offsetZOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("=Cube")
@@ -1451,7 +1445,7 @@ def p_input_dc_id(t):
         quadruplesAll.append(currQuadruple)
         cont+=1
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " +str(int(t.lineno(3))+offsetPos) +": Variable '" + str(t[3]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " +str(int(t.lineno(3))+offsetPos) +": Variable '" + str(t[3]) + "' does not exist.\n")
         sys.exit()
 
 # Vector Position Input
@@ -1474,7 +1468,7 @@ def p_input_dc_vector(t):
         availSet.append(offsetOperand)
         avail[offsetOperand] = None
     if(t[3] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(3))+offsetPos) +": Vector '" + str(t[3]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(3))+offsetPos) +": Vector '" + str(t[3]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("InputVec")
@@ -1510,7 +1504,7 @@ def p_input_dc_mat(t):
         availSet.append(offsetColOperand)
         avail[offsetColOperand] = None
     if(t[3] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(3))+offsetPos) +": Matrix '" + str(t[3]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(3))+offsetPos) +": Matrix '" + str(t[3]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("InputMat")
@@ -1552,7 +1546,7 @@ def p_input_dc_cube(t):
         availSet.append(offsetZOperand)
         avail[offsetZOperand] = None
     if(t[3] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(3))+offsetPos) +": Cube '" + str(t[3]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(3))+offsetPos) +": Cube '" + str(t[3]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("InputCube")
@@ -1642,7 +1636,7 @@ def p_printarithmetic_id(t):
     if(not(t[1] not in varMemory)):
         operands.append(str(t[1]))
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit() 
 
 def p_printarithmetic_value(t):
@@ -1673,7 +1667,7 @@ def p_printarithmetic_vector(t):
         availSet.append(offsetOperand)
         avail[offsetOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getVec")
@@ -1710,7 +1704,7 @@ def p_printarithmetic_mat(t):
         availSet.append(offsetRenOperand)
         avail[offsetRenOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getMat")
@@ -1753,7 +1747,7 @@ def p_printarithmetic_cube(t):
         availSet.append(offsetZOperand)
         avail[offsetZOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getCube")
@@ -1956,7 +1950,7 @@ def p_seen_ID(t):
     if(not(t[1] not in varMemory)):
         operands.append(str(t[1]))
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
 
 # For Statement // Seen AE1
@@ -2080,7 +2074,7 @@ def p_call_dc(t):
         quadruplesAll.append(currQuadruple)
         cont+=1
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(2))+offsetPos) +": Function '" + str(t[2]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(2))+offsetPos) +": Function '" + str(t[2]) + "' does not exist.\n")
         sys.exit()
 
 # Unitary Operation - Add 1
@@ -2158,10 +2152,10 @@ def p_binary_dc_addequalNumber(t):
     global varMemory
     global offsetPos
     if(t[1] not in varMemory):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     if(varMemory[t[1]][0]=="string"):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
         sys.exit()
     lastOperand = operands.pop()
     currVal = lastOperand
@@ -2202,10 +2196,10 @@ def p_binary_dc_subequalNumber(t):
     global varMemory
     global offsetPos
     if(t[1] not in varMemory):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     if(varMemory[t[1]][0]=="string"):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
         sys.exit()
     lastOperand = operands.pop()
     currVal = lastOperand
@@ -2246,10 +2240,10 @@ def p_binary_dc_multequalNumber(t):
     global varMemory
     global offsetPos
     if(t[1] not in varMemory):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     if(varMemory[t[1]][0]=="string"):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
         sys.exit()
     lastOperand = operands.pop()
     currVal = lastOperand
@@ -2290,10 +2284,10 @@ def p_binary_dc_divequalNumber(t):
     global varMemory
     global offsetPos
     if(t[1] not in varMemory):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     if(varMemory[t[1]][0]=="string"):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
         sys.exit()
     lastOperand = operands.pop()
     currVal = lastOperand
@@ -2334,10 +2328,10 @@ def p_binary_dc_moduloequalNumber(t):
     global varMemory
     global offsetPos
     if(t[1] not in varMemory):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     if(varMemory[t[1]][0]=="string"):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Assignment does not match with '" + str(t[1]) + "' Data Type [ " + str(varMemory[t[1]][0]) + " ].\n")
         sys.exit()
     lastOperand = operands.pop()
     currVal = lastOperand
@@ -2483,7 +2477,7 @@ def p_arithmeticexpression_id(t):
     if(not(t[1] not in varMemory)):
         operands.append(str(t[1]))
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit() 
 
 # Arithmetic Expression - Grouping
@@ -2518,7 +2512,7 @@ def p_arithmeticexpression_vector(t):
         availSet.append(offsetOperand)
         avail[offsetOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getVec")
@@ -2557,7 +2551,7 @@ def p_arithmeticexpression_mat(t):
         availSet.append(offsetRenOperand)
         avail[offsetRenOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getMat")
@@ -2602,7 +2596,7 @@ def p_arithmeticexpression_cube(t):
         availSet.append(offsetZOperand)
         avail[offsetZOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getCube")
@@ -2719,7 +2713,7 @@ def p_logicOption_ID(t):
     if(not(t[1] not in varMemory)):
         operands.append(str(t[1]))
     else:
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Variable '" + str(t[1]) + "' does not exist.\n")
         sys.exit() 
 
 def p_logicOption_Vector(t):
@@ -2740,7 +2734,7 @@ def p_logicOption_Vector(t):
         availSet.append(offsetOperand)
         avail[offsetOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Vector '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getVec")
@@ -2777,7 +2771,7 @@ def p_logicOption_Mat(t):
         availSet.append(offsetRenOperand)
         avail[offsetRenOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Matrix '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getMat")
@@ -2820,7 +2814,7 @@ def p_logicOption_Cube(t):
         availSet.append(offsetZOperand)
         avail[offsetZOperand] = None
     if(t[1] not in objectStart):
-        print("\n<!> Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte at line " + str(int(t.lineno(1))+offsetPos) +": Cube '" + str(t[1]) + "' does not exist.\n")
         sys.exit()
     currQuadruple = []
     currQuadruple.append("getCube")
@@ -2865,9 +2859,9 @@ def p_error(t):
     global gio
     gio = True
     if(t is not None):
-        print("\n<!> Error in Dynamo Charlotte: Syntax Error at '%s'.\n" % t.value)
+        print("\n<!> Compile Error in Dynamo Charlotte: Syntax Error at '%s'.\n" % t.value)
     else:
-        print("\n<!> Error in Dynamo Charlotte: Syntax Error.\n")
+        print("\n<!> Compile Error in Dynamo Charlotte: Syntax Error.\n")
     sys.exit()
 
 # Empty Rule
@@ -2887,6 +2881,12 @@ def run(data):
     global quadruplesAll
     caller = getframeinfo(stack()[1][0]) 
     offsetPos = caller.lineno - 1
+    print("")
+    print("------------------------------------------------")
+    print("         <<< © Dynamo Charlotte >>> ")
+    print("            By Juan Carlos Juárez       ")
+    print("  Learn more at https://github.com/jc-juarez")
+    print("------------------------------------------------")
     if(data != ""):
         parser.parse(data)
     if(len(quadruplesAll) <= 2): 
