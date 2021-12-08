@@ -23,7 +23,13 @@ Simply download Dynamo Charlotte IDE and you can start writing code in Dynamo Ch
 
 ### Running Dynamo Charlotte on Python
 
-Download the **'dynamocharlotte'** folder and add it inside the directory where you will be working on. Now create a Python File and import Dynamo Charlotte as follows:
+Make sure you have Python 3.6+ installed and run the following command on your terminal:
+
+```python
+pip install dynamocharlotte
+```
+
+Now Create a Python File and Import Dynamo Charlotte as follows:
 
 ```python
 import dynamocharlotte as dc
