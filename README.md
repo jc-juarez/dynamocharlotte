@@ -12,16 +12,18 @@ How to Run Dynamo Charlotte
 ==========
 
 *Requirements: 
-- For running on Desktop: Dynamo Charlotte IDE v2.0 - [Click Here to Download](https://github.com/jc-juarez/dynamocharlotte_ide/raw/main/Dynamo%20Charlotte%20IDE%20v2.0.exe) or visit [Dynamo Charlotte IDE Repository.](https://github.com/jc-juarez/dynamocharlotte_ide)
+- For running on Windows Desktop: Dynamo Charlotte IDE v2.0 - [Click Here to Download](https://github.com/jc-juarez/dynamocharlotte_ide/raw/main/Dynamo%20Charlotte%20IDE%20v2.0.exe) or visit [Dynamo Charlotte IDE Repository.](https://github.com/jc-juarez/dynamocharlotte_ide)
 - For running on Python: Python 3.6+ installed.
 
-### Running Dynamo Charlotte on Dynamo Charlotte IDE
+### Running Dynamo Charlotte on Dynamo Charlotte IDE (Windows)
 
 Simply download Dynamo Charlotte IDE and you can start writing code in Dynamo Charlotte instantly! 
 
 **Important:** If you run Dynamo Charlotte on the IDE **ommit** the **'import dynamo charlotte as dc'** and **'dc.run()'** commands, as those are for Python. Write your code directly into the editor as if it were inside the **'dc.run()'** function.
 
 ### Running Dynamo Charlotte on Python
+
+**It is recommended to use the Dynamo Charlotte Compiler instead: https://github.com/jc-juarez/dynamocharlotte_compiler**
 
 Make sure you have Python 3.6+ installed and run the following command on your terminal:
 
