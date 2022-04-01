@@ -23,7 +23,10 @@ Simply download Dynamo Charlotte IDE and you can start writing code in Dynamo Ch
 
 ### Running Dynamo Charlotte on Python
 
-**It is recommended to use the Dynamo Charlotte Compiler instead: https://github.com/jc-juarez/dynamocharlotte_compiler**
+
+- **It is recommended to use the Dynamo Charlotte Compiler instead: https://github.com/jc-juarez/dynamocharlotte_compiler**
+- The compile allows for a simpler execution from your terminal.
+
 
 Make sure you have Python 3.6+ installed and run the following command on your terminal:
 
